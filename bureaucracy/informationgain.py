@@ -77,8 +77,8 @@ if __name__ == "__main__":
     p0 = 10**logp0
 
     # 2x2 confusion matrices of some volunteers' agents:
-    M_ll = [0.55,0.80,0.99,0.25,0.9999,0.5001,0.9999]
-    M_nn = [0.55,0.80,0.99,0.25,0.0001,0.9999,0.5001]
+    M_ll = [0.55,0.80,0.999,0.25,0.9999,0.500,0.999]
+    M_nn = [0.55,0.80,0.999,0.25,0.0001,0.999,0.500]
 
     almostrandom = expectedInformationGain(p0, M_ll[0], M_nn[0]) 
     mediumastute = expectedInformationGain(p0, M_ll[1], M_nn[1])
@@ -104,7 +104,7 @@ if __name__ == "__main__":
     ax.set_ylabel("Expected Information Gain from Agent (bits)")
     ax.legend(loc="best")
     #plt.show()
-    fig.savefig('/home/edwin/playground/expectedinfogain.png')
+    fig.savefig('expectedinfogain.png')
 
     print 'Testing the contribution of volunteers after observing a classification'
 
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     ax.set_xlabel("p(LENS)")
     ax.set_ylabel("Contributed Information by an Agent (bits)")
     ax.legend(loc="best")
-    fig.savefig('/home/edwin/playground/infogain_true.png')       
+    fig.savefig('infogain_true.png')       
  
     fig = plt.figure()
     ax = fig.add_subplot(111)
@@ -164,4 +164,4 @@ if __name__ == "__main__":
     ax.set_ylabel("Contributed Information by an Agent (bits)")
     ax.legend(loc="best")
     #plt.show()
-    fig.savefig('/home/edwin/playground/infogain_false.png')
+    fig.savefig('infogain_false.png')
